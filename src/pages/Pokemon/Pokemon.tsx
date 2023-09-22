@@ -10,12 +10,14 @@ import useTitle from 'hooks/useTitle'
 import { Link, useParams } from 'react-router-dom'
 import { usePokemon } from 'context/PokemonContext'
 import { unslugify } from 'helpers'
+import MainPokemonCard from 'components/MainPokemonCard'
+import Header from 'components/Header'
 
 const Pokemon: React.FC = () => {
-  const { t, i18n } = useTranslation()
   const setTitle = useTitle()
-  const {pokemon, fetchPokemon} = usePokemon()
+  const {pokemon, fetchPokemon, pokemonLoading} = usePokemon()
   const { name } = useParams()
+
 
   useEffect(() => {
     if (pokemon) {
@@ -24,13 +26,18 @@ const Pokemon: React.FC = () => {
   }, [pokemon])
 
   useEffect(() => {
-    fetchPokemon({ variables: { name } })
-  }, [])
+      fetchPokemon({ variables: { name: name } })
+  }, [name])
 
+ 
+  console.log(pokemon)
   return (
     <>
-      <h1>{ unslugify(String(name))}</h1>
-      <p>página do pokemon</p>
+      <Header />
+      {pokemonLoading && <p>loading</p>}
+      {!pokemonLoading && pokemon &&
+      <MainPokemonCard pokemon={pokemon}
+      iconColor='inherit' iconSize={20} /> }
     </>
   )
 }

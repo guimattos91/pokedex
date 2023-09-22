@@ -13,6 +13,7 @@ import Header from 'components/Header'
 import PokemonCard from 'components/PokemonCard'
 import { Col, Container, Row } from 'react-bootstrap'
 import { StyledH1 } from './style'
+import LoadingPageComponent from 'components/LoadingPageComponent'
 
 const Pokemons: React.FC = () => {
   const { t, i18n } = useTranslation()
@@ -33,7 +34,7 @@ const Pokemons: React.FC = () => {
         </Col>
       </Row>
     </Container>
-      {loading && pokemons.length === 0 && <p>loading</p>}
+      {loading && pokemons.length === 0 && <LoadingPageComponent />}
       {pokemons.length > 0 && (
           <PaginationComponent pokemons={pokemons}>
             <Container>

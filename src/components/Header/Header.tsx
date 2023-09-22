@@ -13,7 +13,9 @@ const Header: React.FC = () => (
     <Container>
       <Row className="d-flex align-items-center">
         <Col xs={6}>
-          <HeaderLogoImage src={LogoImage}  alt='pokemon-logo'/>
+          <Link to={'/'}>
+            <HeaderLogoImage src={LogoImage}  alt='pokemon-logo'/>
+          </Link>
         </Col>
         <Col xs={6}>
           <HeaderNavStyled>

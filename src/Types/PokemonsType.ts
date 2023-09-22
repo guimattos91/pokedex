@@ -1,13 +1,3 @@
-type SpriteType = {
-    sprites: string;
-    spritesJSON: {
-      other: {
-        'official-artwork': {
-          front_default: string;
-        };
-      };
-    };
-  };
 
 export type PokemonQueryResultsArrayType = {
     id: number,
@@ -56,5 +46,4 @@ description?: string,
 image: string | null,
 move?: string
 stats?: { name: string, value: number }[]
-
 }

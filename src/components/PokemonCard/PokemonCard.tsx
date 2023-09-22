@@ -24,7 +24,7 @@ const PokemonCard: React.FC<IPokemonCardProps> = ({pokemon}) => {
             <PokemonIndexP pokemon={pokemon}>{pokemon.pokedexIndex}</PokemonIndexP>
           </DivTitleContainer>
           <DivImageAndTypesContainer>
-            <PokemonTypesPill pokemon={pokemon} />
+            <PokemonTypesPill pokemon={pokemon} className='' />
             <Link to={`/pokemon/${pokemon.name}`} className="stretched-link">
               <PokemonImage
                 src={`${String(pokemon.image)}.png`}

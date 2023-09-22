@@ -10,7 +10,7 @@ interface IContextProps {
   hasMorePages: boolean;
   pokemons: PokemonType[];
   pokemon: PokemonType | null;
-  fetchPokemon: LazyQueryExecFunction<any, OperationVariables>;
+  fetchPokemon: LazyQueryExecFunction<PokemonsQueryResultDataType, OperationVariables>;
   fetchNextPage: () => void;
 }
 
@@ -60,9 +60,10 @@ useLazyQuery<PokemonsQueryResultDataType>(GET_POKEMON_QUERY)
 
   useEffect(() =>{
     if (!!pokemonData && Array.isArray(pokemonData.results)){
-      setPokemon(normalizePokemonsQueryResults(pokemonData.results)[0] ?? null)
+      setPokemon(normalizePokemonsQueryResults(pokemonData.results)?.[0] ?? null)
     }
   }, [pokemonData])
+
 
   return (
     <ReactContext.Provider

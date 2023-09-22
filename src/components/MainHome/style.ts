@@ -17,16 +17,20 @@ export const TitleH1Styled = styled.h1`
     margin: 0;
     padding: 0;
     margin-bottom: 1rem;
+    position: relative;
 
     span {
         position: relative;
-        z-index: -1;
-        ::before {
+
+        &::before {
             background: #FFDA55;
             content: '';
             position: absolute;
-            height: 250px;
-            width: 150px;
+            height: 40%;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
         }
     }
 `

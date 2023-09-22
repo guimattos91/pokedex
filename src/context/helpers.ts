@@ -1,6 +1,5 @@
 import Config from "Config";
 import { PokemonQueryResultsArrayType, PokemonType } from "Types/PokemonsType";
-import { config } from "process";
 
 export const calcFemaleGenderRatePercent = (value: number): number => {
     let result = (value / 8) * 100
@@ -27,10 +26,8 @@ export const normalizePokemonsQueryResults = (
         weight: item.weight ? item.weight / 10 : undefined,
         color:item.specy.color.name,
         gender: {
-            m: item.specy.has_gender_differences ? calcMaleGenderRatePercent(item.specy.gender_rate ?? 10 )
-            : 100,
-            f: item.specy.has_gender_differences ? calcFemaleGenderRatePercent(item.specy.gender_rate ?? 10)
-            : 0
+            m: calcMaleGenderRatePercent(item.specy.gender_rate ?? 10 ),
+            f: calcFemaleGenderRatePercent(item.specy.gender_rate ?? 10),
         },
         description: item?.specy?.descriptions?.[0]?.text ?? undefined,
         types: item.types.data.map((type)=>type.type.name),

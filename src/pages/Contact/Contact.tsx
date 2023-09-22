@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
   return (
     <>
     <Header />
-    <Container>
+    <Container className='pb-4'>
       <Row>
         <Col xs={12}>
           <StyledH1>Contact</StyledH1>

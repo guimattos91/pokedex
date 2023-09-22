@@ -12,13 +12,13 @@ const MainHome: React.FC = () => (
   <MainContainer>
     <Container>
       <Row>
-        <Col xs={5}>
+        <Col xs={12} md={5}>
           <DivContainerStyled>
             <TitleH1Styled>Which pokemon would you <span>choose</span>?</TitleH1Styled>
             <p>You can know the type of Pokémon, their strengths, weaknesses and abilities.</p>
           </DivContainerStyled>
         </Col>
-        <Col xs={7}>
+        <Col xs={12} md={7}>
           <PikachuImage src={BackgroundImage} alt='Image' />
         </Col>
       </Row>

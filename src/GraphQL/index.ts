@@ -32,7 +32,7 @@ export const GET_POKEMON_QUERY = gql`
     query onePokemonQuery ($name: String) {
         results: pokemon_v2_pokemon(
             limit: 1,
-            where: {name: {eq: $name}},
+            where: {name: {_eq: $name}},
         ) {
                 id
                 name

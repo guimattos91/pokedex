@@ -25,7 +25,8 @@ li {
     { theme, pokemon }) => (theme.background[pokemon.color] === theme.background.white ) ? theme.colorPill.white
     : theme.colorPill.default };
   list-style: none;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-right: 1rem;
   color: ${(
     { theme, pokemon }) => theme.colorText[pokemon.color] ? theme.colorText[pokemon.color]
     : theme.colorText.default };

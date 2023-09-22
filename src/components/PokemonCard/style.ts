@@ -14,7 +14,8 @@ export const Card = styled.div<IBackgroundColorProps>`
   padding: 1rem 2rem;
   position: relative;
   margin: 0.25rem;
-    :hover {
+
+    &:hover {
       @keyframes createBox {
     from {
       transform: scale(1);
@@ -28,7 +29,6 @@ export const Card = styled.div<IBackgroundColorProps>`
 export const DivImageAndTypesContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0.5 0;
 `
 export const PokemonImage = styled.img`
     width: 100px;
@@ -56,9 +56,4 @@ export const DivTitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-`
-export const DivContainerStyled = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
 `
