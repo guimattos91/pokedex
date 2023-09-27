@@ -11,7 +11,6 @@ import {
 
 import {
   ApolloQueryResult,
-  DocumentNode,
   LazyQueryExecFunction,
   OperationVariables,
   useLazyQuery,
@@ -39,8 +38,6 @@ interface IContextProps {
   ) => Promise<ApolloQueryResult<PokemonsQueryResultDataType>>
   setSearchPokemons: Dispatch<SetStateAction<string>>
   searchPokemons: string
-  GET_POKEMONS_QUERY: DocumentNode
-  GET_POKEMON_QUERY: DocumentNode
 }
 
 interface IPokemonProviderProps {
@@ -133,8 +130,6 @@ export const PokemonProvider: React.FC<IPokemonProviderProps> = ({
           pokemon,
           hasMorePages,
           searchPokemons,
-          GET_POKEMONS_QUERY,
-          GET_POKEMON_QUERY,
           fetchNextPage,
           fetchPokemon,
           refetchPokemons,
