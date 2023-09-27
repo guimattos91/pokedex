@@ -16,7 +16,8 @@ import {
   useLazyQuery,
   useQuery,
 } from '@apollo/client'
-import { GET_POKEMONS_QUERY, GET_POKEMON_QUERY } from 'graphql'
+// eslint-disable-next-line import/no-unresolved
+import { GET_POKEMONS_QUERY, GET_POKEMON_QUERY } from 'GraphQL'
 import { PokemonType, PokemonsQueryResultDataType } from 'Types/PokemonsType'
 
 import { normalizePokemonsQueryResults } from './helpers'
