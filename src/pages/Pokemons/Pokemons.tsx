@@ -40,7 +40,13 @@ const Pokemons: React.FC = () => {
           <Container>
             <Row className="g-1 pb-3 pt-2">
               {pokemons.map((pokemon) => (
-                <Col sm={6} lg={4} xxl={3} className="d-flex px-md-1">
+                <Col
+                  key={pokemon.id}
+                  sm={6}
+                  lg={4}
+                  xxl={3}
+                  className="d-flex px-md-1"
+                >
                   <PokemonCard pokemon={pokemon} />
                 </Col>
               ))}

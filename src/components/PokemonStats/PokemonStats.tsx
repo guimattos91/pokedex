@@ -27,7 +27,7 @@ const PokemonStats: React.FC<IPokemonCardProps> = ({ pokemon, className }) => {
   )
 
   return (
-    <StatsContainer pokemon={pokemon} className={className}>
+    <StatsContainer $pokemon={pokemon} className={className}>
       <DivGenderContainer>
         <SpanContainer>
           <span>Gender</span>
@@ -37,7 +37,7 @@ const PokemonStats: React.FC<IPokemonCardProps> = ({ pokemon, className }) => {
       </DivGenderContainer>
       {pokemon.stats &&
         pokemon.stats.map((stat) => (
-          <OneStatContainer pokemon={pokemon} key={stat.name}>
+          <OneStatContainer $pokemon={pokemon} key={stat.name}>
             <SpanContainer>
               <span>{unslugify(stat.name)}</span>
               <span>{stat.value}</span>
@@ -45,7 +45,7 @@ const PokemonStats: React.FC<IPokemonCardProps> = ({ pokemon, className }) => {
             <ProgressBarStats progress={stat.value} animated now={stat.value} />
           </OneStatContainer>
         ))}
-      <OneStatContainer pokemon={pokemon}>
+      <OneStatContainer $pokemon={pokemon}>
         <SpanContainer>
           <span>Total</span>
           <span>{totalStatValue}</span>

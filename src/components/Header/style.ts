@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 interface ILinkStyledProps {
-  pathname: string
-  linkName: string
+  $pathname: string
+  $linkName: string
 }
 
 export const HeaderContainer = styled.header`
@@ -99,8 +99,8 @@ export const HeaderOffCanvasMenu = styled(Offcanvas)`
   }
 `
 export const HeaderLinks = styled(Link)<ILinkStyledProps>`
-  font-weight: ${({ pathname, linkName }) =>
-    pathname === linkName ? 700 : 400};
-  text-decoration: ${({ pathname, linkName }) =>
-    pathname === linkName ? 'underline' : 'normal'};
+  font-weight: ${({ $pathname, $linkName }) =>
+    $pathname === $linkName ? 700 : 400};
+  text-decoration: ${({ $pathname, $linkName }) =>
+    $pathname === $linkName ? 'underline' : 'normal'};
 `

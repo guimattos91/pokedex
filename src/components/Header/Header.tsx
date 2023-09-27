@@ -46,22 +46,22 @@ const Header: React.FC<IBaseComponentProps> = () => {
           <Col xs={6} className="d-flex justify-content-end d-md-block">
             <HeaderNavStyled>
               <HeaderLinks
-                pathname={pathname}
-                linkName={homeLink}
+                $pathname={pathname}
+                $linkName={homeLink}
                 to={homeLink}
               >
                 Home
               </HeaderLinks>
               <HeaderLinks
-                pathname={pathname}
-                linkName={pokemonsLink}
+                $pathname={pathname}
+                $linkName={pokemonsLink}
                 to={pokemonsLink}
               >
                 Pokémons
               </HeaderLinks>
               <HeaderLinks
-                pathname={pathname}
-                linkName={contactLink}
+                $pathname={pathname}
+                $linkName={contactLink}
                 to={contactLink}
               >
                 Contact
@@ -81,22 +81,22 @@ const Header: React.FC<IBaseComponentProps> = () => {
               <Offcanvas.Body className="d-flex flex-column">
                 <HeaderNavStyledMobile>
                   <HeaderLinks
-                    pathname={pathname}
-                    linkName={homeLink}
+                    $pathname={pathname}
+                    $linkName={homeLink}
                     to={homeLink}
                   >
                     Home
                   </HeaderLinks>
                   <HeaderLinks
-                    pathname={pathname}
-                    linkName={pokemonsLink}
+                    $pathname={pathname}
+                    $linkName={pokemonsLink}
                     to={pokemonsLink}
                   >
                     Pokémons
                   </HeaderLinks>
                   <HeaderLinks
-                    pathname={pathname}
-                    linkName={contactLink}
+                    $pathname={pathname}
+                    $linkName={contactLink}
                     to={contactLink}
                   >
                     Contact

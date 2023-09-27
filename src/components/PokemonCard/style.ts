@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { PokemonType } from 'Types/PokemonsType'
 
 interface IBackgroundColorProps {
-  pokemon: PokemonType
+  $pokemon: PokemonType
 }
 
 export const Card = styled.div<IBackgroundColorProps>`
@@ -10,7 +10,8 @@ export const Card = styled.div<IBackgroundColorProps>`
   flex-grow: 1;
   flex-direction: column;
   border-radius: 25px;
-  background-color: ${({ theme, pokemon }) => theme.background[pokemon.color]};
+  background-color: ${({ theme, $pokemon }) =>
+    theme.background[$pokemon.color]};
   position: relative;
   margin-bottom: 0.25rem;
   padding: 0.75rem 1.5rem;
@@ -33,18 +34,18 @@ export const PokemonImage = styled.img`
   z-index: 1;
 `
 export const PokemonNameH2 = styled.h2<IBackgroundColorProps>`
-  color: ${({ theme, pokemon }) =>
-    theme.colorText[pokemon.color]
-      ? theme.colorText[pokemon.color]
+  color: ${({ theme, $pokemon }) =>
+    theme.colorText[$pokemon.color]
+      ? theme.colorText[$pokemon.color]
       : theme.colorText.default};
   font-weight: 700;
   margin: 0;
   padding: 0;
 `
 export const PokemonIndexP = styled.p<IBackgroundColorProps>`
-  color: ${({ theme, pokemon }) =>
-    theme.indexColor[pokemon.color]
-      ? theme.indexColor[pokemon.color]
+  color: ${({ theme, $pokemon }) =>
+    theme.indexColor[$pokemon.color]
+      ? theme.indexColor[$pokemon.color]
       : theme.indexColor.default};
   font-weight: 300;
   margin: 0;

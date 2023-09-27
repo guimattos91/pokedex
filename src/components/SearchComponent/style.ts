@@ -14,8 +14,7 @@ export const InputContainer = styled.div`
   width: 100%;
   padding: 12px 24px;
   font-size: 1.25rem;
-
-  /* border: 1px solid grey; */
+  margin-bottom: 2rem;
 `
 export const InputButtonStyled = styled.button`
   border: none;

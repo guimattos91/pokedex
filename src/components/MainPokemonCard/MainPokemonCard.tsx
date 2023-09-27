@@ -36,11 +36,11 @@ const MainPokemonCard: React.FC<IPokemonCardProps> = ({
   iconSize,
 }) => {
   return (
-    <MainPokemonContainer pokemon={pokemon}>
+    <MainPokemonContainer $pokemon={pokemon}>
       <Container>
         <RowStyled className="g-0 shadow">
           <Col xs={12} md={6}>
-            <DivImageAndTypesContainer pokemon={pokemon} className="shadow">
+            <DivImageAndTypesContainer $pokemon={pokemon} className="shadow">
               <PokemonImage
                 src={`${String(pokemon.image)}.png`}
                 alt={pokemon.name}
@@ -51,10 +51,10 @@ const MainPokemonCard: React.FC<IPokemonCardProps> = ({
           <Col xs={12} md={6}>
             <DivContainerStyled>
               <DivTextTitleContainer>
-                <PokemonNameH1 pokemon={pokemon}>
+                <PokemonNameH1 $pokemon={pokemon}>
                   {unslugify(String(pokemon.name))}
                 </PokemonNameH1>
-                <PokemonIndexP pokemon={pokemon}>
+                <PokemonIndexP $pokemon={pokemon}>
                   {pokemon.pokedexIndex}
                 </PokemonIndexP>
               </DivTextTitleContainer>

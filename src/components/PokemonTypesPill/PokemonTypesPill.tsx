@@ -17,7 +17,7 @@ const PokemonTypesPill: React.FC<IPokemonCardProps> = ({
   className,
 }) => {
   return (
-    <PillContainer pokemon={pokemon} className={className}>
+    <PillContainer $pokemon={pokemon} className={className}>
       {pokemon.types.map((type) => (
         <li key={type}>{unslugify(type)}</li>
       ))}

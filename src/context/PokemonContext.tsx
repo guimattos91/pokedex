@@ -86,6 +86,17 @@ export const PokemonProvider: React.FC<IPokemonProviderProps> = ({
     setIsFetchingMore(false)
   }, [fetchMore, offset, searchPokemons])
 
+  const [fetchPokemon, { data: pokemonData, loading: pokemonLoading }] =
+    useLazyQuery<PokemonsQueryResultDataType>(GET_POKEMON_QUERY)
+
+  useEffect(() => {
+    if (!!pokemonData && Array.isArray(pokemonData.results)) {
+      setPokemon(
+        normalizePokemonsQueryResults(pokemonData.results)?.[0] ?? null,
+      )
+    }
+  }, [pokemonData])
+
   useEffect(() => {
     if (offset > 0 && !isFetchingMore) {
       handleSetMore()
@@ -108,17 +119,6 @@ export const PokemonProvider: React.FC<IPokemonProviderProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchPokemons])
-
-  const [fetchPokemon, { data: pokemonData, loading: pokemonLoading }] =
-    useLazyQuery<PokemonsQueryResultDataType>(GET_POKEMON_QUERY)
-
-  useEffect(() => {
-    if (!!pokemonData && Array.isArray(pokemonData.results)) {
-      setPokemon(
-        normalizePokemonsQueryResults(pokemonData.results)?.[0] ?? null,
-      )
-    }
-  }, [pokemonData])
 
   return (
     <ReactContext.Provider

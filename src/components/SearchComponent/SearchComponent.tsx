@@ -38,7 +38,7 @@ const SearchComponent: React.FC<IPokemonCardProps> = () => {
           }
         }}
       />
-      {inputText.length > 0 && (
+      {inputText?.length > 0 && (
         <InputButtonStyled
           type="button"
           onClick={handleClearSearch}

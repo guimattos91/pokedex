@@ -2,11 +2,11 @@ import { memo } from 'react'
 
 import { BrowserRouter, Routes as Switch, Route } from 'react-router-dom'
 
+import Contact from 'pages/Contact'
 import Home from 'pages/Home'
 import NotFound from 'pages/NotFound'
 import Pokemon from 'pages/Pokemon'
 import Pokemons from 'pages/Pokemons'
-import Contact from 'pages/Contact'
 
 const Routes: React.FC = () => {
   return (

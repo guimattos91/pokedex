@@ -23,14 +23,14 @@ interface IPokemonCardProps {
 
 const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
   return (
-    <Card pokemon={pokemon}>
+    <Card $pokemon={pokemon}>
       <DivTitleContainer>
         <Link to={`/pokemons/${pokemon.name}`}>
-          <PokemonNameH2 pokemon={pokemon}>
+          <PokemonNameH2 $pokemon={pokemon}>
             {unslugify(pokemon.name)}
           </PokemonNameH2>
         </Link>
-        <PokemonIndexP pokemon={pokemon}>{pokemon.pokedexIndex}</PokemonIndexP>
+        <PokemonIndexP $pokemon={pokemon}>{pokemon.pokedexIndex}</PokemonIndexP>
       </DivTitleContainer>
       <DivImageAndTypesContainer>
         <PokemonTypesPill pokemon={pokemon} className="" />

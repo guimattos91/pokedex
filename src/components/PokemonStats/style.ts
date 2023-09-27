@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { PokemonType } from 'Types/PokemonsType'
 
 interface IBackgroundColorProps {
-  pokemon: PokemonType
+  $pokemon: PokemonType
 }
 
 interface IProgressBarProps {

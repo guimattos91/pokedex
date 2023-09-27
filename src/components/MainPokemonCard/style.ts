@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { PokemonType } from 'Types/PokemonsType'
 
 interface IBackgroundColorProps {
-  pokemon: PokemonType
+  $pokemon: PokemonType
 }
 
 export const RowStyled = styled(Row)`
@@ -21,7 +21,8 @@ export const DivImageAndTypesContainer = styled.div<IBackgroundColorProps>`
   flex-direction: column;
   justify-content: space-evenly;
   margin: 0.5rem 0rem;
-  background-color: ${({ theme, pokemon }) => theme.background[pokemon.color]};
+  background-color: ${({ theme, $pokemon }) =>
+    theme.background[$pokemon.color]};
   border-radius: 1rem;
   height: 100%;
 
@@ -41,9 +42,9 @@ export const PokemonNameH1 = styled.h1<IBackgroundColorProps>`
   padding: 0;
 `
 export const PokemonIndexP = styled.p<IBackgroundColorProps>`
-  color: ${({ theme, pokemon }) =>
-    theme.indexColor[pokemon.color]
-      ? theme.indexColor[pokemon.color]
+  color: ${({ theme, $pokemon }) =>
+    theme.indexColor[$pokemon.color]
+      ? theme.indexColor[$pokemon.color]
       : theme.indexColor.default};
   font-weight: 300;
   margin: 0;

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { PokemonType } from 'Types/PokemonsType'
 
 interface IBackgroundColorProps {
-  pokemon: PokemonType
+  $pokemon: PokemonType
 }
 
 export const PillContainer = styled.ul<IBackgroundColorProps>`
@@ -21,16 +21,16 @@ export const PillContainer = styled.ul<IBackgroundColorProps>`
     width: 100px;
     padding: 5px 20px;
     border-radius: 20px;
-    background-color: ${({ theme, pokemon }) =>
-      theme.background[pokemon.color] === theme.background.white
+    background-color: ${({ theme, $pokemon }) =>
+      theme.background[$pokemon.color] === theme.background.white
         ? theme.colorPill.white
         : theme.colorPill.default};
     list-style: none;
     margin-bottom: 10px;
     margin-right: 1rem;
-    color: ${({ theme, pokemon }) =>
-      theme.colorText[pokemon.color]
-        ? theme.colorText[pokemon.color]
+    color: ${({ theme, $pokemon }) =>
+      theme.colorText[$pokemon.color]
+        ? theme.colorText[$pokemon.color]
         : theme.colorText.default};
   }
 `
