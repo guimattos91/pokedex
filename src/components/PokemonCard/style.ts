@@ -1,51 +1,51 @@
-import { PokemonType } from 'Types/PokemonsType'
 import styled from 'styled-components'
+import { PokemonType } from 'Types/PokemonsType'
 
-interface IBackgroundColorProps{
+interface IBackgroundColorProps {
   pokemon: PokemonType
 }
 
 export const Card = styled.div<IBackgroundColorProps>`
-  display: flex;
+  display: block;
   flex-grow: 1;
   flex-direction: column;
   border-radius: 25px;
   background-color: ${({ theme, pokemon }) => theme.background[pokemon.color]};
-  padding: 1rem 2rem;
   position: relative;
-  margin: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 0.75rem 1.5rem;
 
+  @media (min-width: 768px) {
     &:hover {
-      @keyframes createBox {
-    from {
-      transform: scale(1);
+      z-index: 2;
+      transform: scale(1.03);
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
     }
-    to {
-      transform: scale(2);
-    }
-    };
   }
 `
 export const DivImageAndTypesContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 0.25rem;
 `
 export const PokemonImage = styled.img`
-    width: 100px;
-    z-index: 1;
+  width: 100px;
+  z-index: 1;
 `
 export const PokemonNameH2 = styled.h2<IBackgroundColorProps>`
-  color: ${(
-    { theme, pokemon }) => theme.colorText[pokemon.color] ? theme.colorText[pokemon.color]
-    : theme.colorText.default };
+  color: ${({ theme, pokemon }) =>
+    theme.colorText[pokemon.color]
+      ? theme.colorText[pokemon.color]
+      : theme.colorText.default};
   font-weight: 700;
   margin: 0;
   padding: 0;
 `
 export const PokemonIndexP = styled.p<IBackgroundColorProps>`
-  color: ${(
-    { theme, pokemon }) => theme.indexColor[pokemon.color] ? theme.indexColor[pokemon.color]
-    : theme.indexColor.default };
+  color: ${({ theme, pokemon }) =>
+    theme.indexColor[pokemon.color]
+      ? theme.indexColor[pokemon.color]
+      : theme.indexColor.default};
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -53,7 +53,7 @@ export const PokemonIndexP = styled.p<IBackgroundColorProps>`
   font-size: 1.5rem;
 `
 export const DivTitleContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `

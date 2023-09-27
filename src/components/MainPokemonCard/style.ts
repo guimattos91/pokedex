@@ -1,8 +1,8 @@
-import { PokemonType } from 'Types/PokemonsType'
+import { Row } from 'react-bootstrap'
 import styled from 'styled-components'
-import { Col, Container, Row } from 'react-bootstrap'
+import { PokemonType } from 'Types/PokemonsType'
 
-interface IBackgroundColorProps{
+interface IBackgroundColorProps {
   pokemon: PokemonType
 }
 
@@ -19,32 +19,32 @@ export const MainPokemonContainer = styled.main<IBackgroundColorProps>`
 export const DivImageAndTypesContainer = styled.div<IBackgroundColorProps>`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 0.5 0;
+  justify-content: space-evenly;
+  margin: 0.5rem 0rem;
   background-color: ${({ theme, pokemon }) => theme.background[pokemon.color]};
   border-radius: 1rem;
   height: 100%;
 
-  &:last-child {
+  /* &:last-child {
     justify-content: flex-end;
     align-items: end;
-    }
+  } */
 `
 export const PokemonImage = styled.img`
-    width: 90%;
-    align-self: center;
+  width: 90%;
+  align-self: center;
 `
 export const PokemonNameH1 = styled.h1<IBackgroundColorProps>`
-  color: ${(
-    { theme }) => theme.colorText.ehite};
+  color: ${({ theme }) => theme.colorText.ehite};
   font-weight: 700;
   margin: 0;
   padding: 0;
 `
 export const PokemonIndexP = styled.p<IBackgroundColorProps>`
-  color: ${(
-    { theme, pokemon }) => theme.indexColor[pokemon.color] ? theme.indexColor[pokemon.color]
-    : theme.indexColor.default };
+  color: ${({ theme, pokemon }) =>
+    theme.indexColor[pokemon.color]
+      ? theme.indexColor[pokemon.color]
+      : theme.indexColor.default};
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -52,42 +52,42 @@ export const PokemonIndexP = styled.p<IBackgroundColorProps>`
   font-size: 1.5rem;
 `
 export const DivContainerStyled = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 `
 
 export const DivTextTitleContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
 `
 
 export const DivCharacteristic = styled.div`
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding-bottom: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 1rem;
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     justify-content: center;
   }
 `
 
 export const DivCharacteristicBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-right: 1px solid lightgrey;
-    p{
-      font-size: 0.75rem;
-      color: grey;
-      margin: 0 ;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid lightgrey;
+  p {
+    font-size: 0.75rem;
+    color: grey;
+    margin: 0;
+  }
 `
 
 export const CharacteristicSpan = styled.span`
-    font-weight: 700;
+  font-weight: 700;
 `

@@ -6,7 +6,7 @@ import BaseComponent from './PaginationComponent'
 describe('BaseComponent', () => {
   it('should render a children', () => {
     const { getByText } = render(
-      <BaseComponent>
+      <BaseComponent pokemons={[]}>
         <div>TEST</div>
       </BaseComponent>,
     )

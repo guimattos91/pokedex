@@ -1,7 +1,7 @@
-import { PokemonType } from 'Types/PokemonsType'
 import styled from 'styled-components'
+import { PokemonType } from 'Types/PokemonsType'
 
-interface IBackgroundColorProps{
+interface IBackgroundColorProps {
   pokemon: PokemonType
 }
 
@@ -14,22 +14,24 @@ export const PillContainer = styled.ul<IBackgroundColorProps>`
   padding: 0;
   margin: 0;
 
-li {
-  display: flex;
-  justify-content: center;
-  border-radius:30%;
-  width: 100px;
-  padding: 5px 20px;
-  border-radius: 20px;
-  background-color: ${(
-    { theme, pokemon }) => (theme.background[pokemon.color] === theme.background.white ) ? theme.colorPill.white
-    : theme.colorPill.default };
-  list-style: none;
-  margin-bottom: 10px;
-  margin-right: 1rem;
-  color: ${(
-    { theme, pokemon }) => theme.colorText[pokemon.color] ? theme.colorText[pokemon.color]
-    : theme.colorText.default };
+  li {
+    display: flex;
+    justify-content: center;
+    border-radius: 30%;
+    width: 100px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: ${({ theme, pokemon }) =>
+      theme.background[pokemon.color] === theme.background.white
+        ? theme.colorPill.white
+        : theme.colorPill.default};
+    list-style: none;
+    margin-bottom: 10px;
+    margin-right: 1rem;
+    color: ${({ theme, pokemon }) =>
+      theme.colorText[pokemon.color]
+        ? theme.colorText[pokemon.color]
+        : theme.colorText.default};
   }
 `
 // if rgba(255, 255, 255, 0.2)};
