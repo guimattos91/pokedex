@@ -19,8 +19,8 @@ export const MainPokemonContainer = styled.main<IBackgroundColorProps>`
 export const DivImageAndTypesContainer = styled.div<IBackgroundColorProps>`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: space-evenly;
-  margin: 0.5rem 0rem;
   background-color: ${({ theme, $pokemon }) =>
     theme.background[$pokemon.color]};
   border-radius: 1rem;
